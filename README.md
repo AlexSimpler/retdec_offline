@@ -26,6 +26,7 @@ The following dependencies are required for this plugin:
 
  * Install [RetDec decompiler](https://github.com/avast-tl/retdec)
  * Download and copy the following plugin to binary ninja plugin's directory (``~/.binaryninja/plugins/``)
+ * Change the paths in the __ini__.py file of python and the retdec decompiler
 
 ## License
 
