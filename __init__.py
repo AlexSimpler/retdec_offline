@@ -147,7 +147,9 @@ class RetDec(object):
         self.conf = RetDecConfigFactory.main(self._view)
         self.conf.add_function(RetDecConfigFactory.func(self._function))
 
-        self._cmdline = ['retdec-decompiler.py']
+        #here is your python path ex(C:\\Users\\test\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe)
+        self._cmdline = ['C:\\Users\\admob\\AppData\\Local\\Programs\\Python\\Python37-32\\python.exe']
+        self._cmdline.append('C:\\Users\\admob\\Documents\\tools\\retdec\\bin\\retdec-decompiler.py')
         self._cmdline.append('--backend-no-debug-comments')
         self._cmdline.append('--cleanup')
 
@@ -175,7 +177,7 @@ class RetDec(object):
                 code = f.read()
 
             os.unlink('{}.c'.format(inputfile))
-            os.unlink('{}.c.frontend.dsm'.format(inputfile))
+            # os.unlink('{}.c.frontend.dsm'.format(inputfile))
 
         os.unlink(tmpfilename)
 
@@ -194,6 +196,7 @@ class RetDec(object):
             self.load_function(f)
 
             code = self.decompile(f.name)
+            print("My name is",f.name)
 
         os.unlink(tmpfilename)
 
